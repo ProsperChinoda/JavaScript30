@@ -1,2 +1,2 @@
 # JavaScript30
-30 days of learning JavaScript
+This repo seeks to show 30 projects built in 30 days while learning JavaScript

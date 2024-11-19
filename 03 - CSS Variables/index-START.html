@@ -19,14 +19,23 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img src="https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-1035x780.jpg">
 
   <style>
 
-    /*
-      misc styles, nothing to do with CSS variables
-    */
-
+  :root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
+  img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+  }
+  span hl {
+    color: var(--base);
+  }
     body {
       text-align: center;
       background: #193549;
@@ -45,7 +54,14 @@
     }
   </style>
 
+
   <script>
+    const input = document.querySelectorAll('.controls input');
+    
+    function handleUpdate(){
+      console.log(this.value);
+    }
+
   </script>
 
 </body>

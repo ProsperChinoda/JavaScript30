@@ -57,7 +57,27 @@
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
       };
+    };
+
+    const slider = document.querySelectorAll('.slide-in');
+
+    function checkSlide(e){
+      slider.forEach(sliderImage => {
+      const slideAt = (window.screenY + window.innerHeight) - sliderImage.height / 2;
+      
+      const	sliderBottom = sliderImage.offsetTop + sliderImage.height;
+      const isHalfAt = slideAt > sliderImage.offsetTop;
+      const isNotScrolledPast = window.scrollY < sliderBottom;
+      if (isHalfAt && isNotScrolledPast){
+        sliderImage.classList.add('active');
+      }else{
+        sliderImage.classList.remove('active')
+      }
+
+      });
     }
+
+    window.addEventListener('scroll', debounce(checkSlide));
 
   </script>
 
